@@ -6,18 +6,21 @@ import java.util.Random;
 
 public class FirstTask {
 
-    public static void main(String[] args) {
-        List<Integer> arrayList = generateRandomArrayList(10);
+    public static void main(String[] args) { //Надо сделать считывание данных из какого-то источника (в условии нет, поэтому оставил неправильно в коде)
+        int size = 10;
+        int min = -10;
+        int max = 10;
+        List<Integer> arrayList = generateRandomArrayList(size, min, max);
         System.out.println("List:\n" + arrayList);
         sortArrayList(arrayList);
         System.out.println("\nSorted List:\n" + arrayList);
     }
 
-    public static List<Integer> generateRandomArrayList(int size) { // Метод для генерации случайного массива
+    public static List<Integer> generateRandomArrayList(int size, int min, int max) { // Метод для генерации случайного массива
         List<Integer> arrayList = new ArrayList<>();
         Random random = new Random();
         for (int i = 0; i < size; i++) {
-            arrayList.add(random.nextInt(21) - 10);
+            arrayList.add(random.nextInt(max - min + 1) + min);
         }
         return arrayList;
     }
