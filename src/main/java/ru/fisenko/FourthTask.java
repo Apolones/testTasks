@@ -3,7 +3,7 @@ package ru.fisenko;
 import java.util.Arrays;
 
 public class FourthTask {
-    public static void main(String[] args) {
+    public static void main(String[] args) { //Надо сделать считывание данных из какого-то источника (в условии нет, поэтому оставил неправильно в коде)
         int[] nums = {10, 5, 7, 5, 13, 6};
         int k = 4;
         int[] order = partitionKSubsets(nums, k);
