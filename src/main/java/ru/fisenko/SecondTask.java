@@ -13,6 +13,9 @@ public class SecondTask {
     }
 
     public static List<Integer> generateRandomArrayList(int size, int min, int max) { // Метод для генерации случайного массива
+        if (size <= 0) {
+            throw new IllegalArgumentException("Size should be greater than zero.");
+        }
         List<Integer> arrayList = new ArrayList<>();
         Random random = new Random();
         for (int i = 0; i < size; i++) {

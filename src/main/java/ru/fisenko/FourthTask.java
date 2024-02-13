@@ -11,10 +11,11 @@ public class FourthTask {
     }
 
     public static int[] partitionKSubsets(int[] nums, int k) {
-        int totalSum = 0;
-        for (int num : nums) {
-            totalSum += num;
+        if (nums.length == 0 || k <= 0) {
+            throw new IllegalArgumentException("Invalid input.");
         }
+
+        int totalSum = Arrays.stream(nums).sum();
 
         int[] visited = new int[nums.length]; // Массив для отслеживания посещенных элементов с указанием шага, на котором был посещен
 

@@ -15,6 +15,9 @@ public class ThirdTask {
     }
 
     public static List<Integer> rollDice(int count) { //Метод для генерации нескольких случайних бросков кубика
+        if (count <= 0) {
+            throw new IllegalArgumentException("Count should be greater than zero.");
+        }
         List<Integer> arrayList = new ArrayList<>();
         Random random = new Random();
         for (int i = 0; i < count; i++) {
@@ -49,6 +52,9 @@ public class ThirdTask {
     }
 
     public static void combinationWinrate(List<Integer> firstPlayerNumbers, List<Integer> secondPlayerNumbers, int countGame, int countRolls) {
+        if (countGame <= 1) {
+            throw new IllegalArgumentException("Count games should be greater than 1.");
+        }
         int win = 0;
         int equal = 0;
         int lose = 0;
